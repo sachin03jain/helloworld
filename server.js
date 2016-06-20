@@ -25,13 +25,13 @@ var express = require('express');
       	res.end(JSON.stringify({data:"hello world! getData"}));
    });
 
-    app.get('/add/:a/:b',function(req,res){
+    app.post('/add',function(req,res){
     	try{
-    		var a = parseInt(req.params.a);
-    		var b = parseInt(req.params.b);
+    		var a = parseInt(req.body.a);
+    		var b = parseInt(req.body.b);
     		res.end(JSON.stringify({data:a+b}));
     	}catch(ex){
-    		
+
     		res.end(JSON.stringify({data:ex}));
     	}
     	
