@@ -18,7 +18,7 @@ var bodyParser      = require("body-parser");
 
   app.use(bodyParser.urlencoded({ extended: true }));
   app.use(bodyParser.json());
-  
+
    app.get('/',function(req,res){
    		res.writeHead(200, { 'Content-Type': 'application/json' });
       	res.end(JSON.stringify({data:"hello world!"}));
@@ -33,7 +33,7 @@ var bodyParser      = require("body-parser");
     	try{
     		var a = parseInt(req.body.a);
     		var b = parseInt(req.body.b);
-    		res.json({data:req.body.a});
+    		res.json({'data':a+b});
     	}catch(ex){
 
     		res.json({data:ex+" in catch"});
