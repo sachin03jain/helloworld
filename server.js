@@ -33,7 +33,7 @@ var bodyParser  = require("body-parser");
     	try{
     		var a = parseInt(req.body.a);
     		var b = parseInt(req.body.b);
-    		res.json({'data':a+b});
+    		res.json({'data':"data = "+(a+b) });
     	}catch(ex){
 
     		res.json({data:ex+" in catch"});
