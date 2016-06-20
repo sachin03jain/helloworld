@@ -31,9 +31,9 @@ var bodyParser  = require("body-parser");
 
     app.post('/add',function(req,res){
     	try{
-    		var a = parseInt(req.body.a);
-    		var b = parseInt(req.body.b);
-    		res.json({'data':"data = "+(a+b) });
+    		/*var a = parseInt(req.body.a);
+    		var b = parseInt(req.body.b);*/
+    		res.json({'data':"data = "+(req.body.a+req.body.b) });
     	}catch(ex){
 
     		res.json({data:ex+" in catch"});
