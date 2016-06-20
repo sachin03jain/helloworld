@@ -1,5 +1,6 @@
 var http = require('http');
 var express = require('express');
+var bodyParser      = require("body-parser");
 
  var app = express();
  var server = http.createServer(app);
@@ -15,6 +16,9 @@ var express = require('express');
 
    });
 
+  app.use(bodyParser.urlencoded({ extended: true }));
+  app.use(bodyParser.json());
+  
    app.get('/',function(req,res){
    		res.writeHead(200, { 'Content-Type': 'application/json' });
       	res.end(JSON.stringify({data:"hello world!"}));
