@@ -29,10 +29,10 @@ var express = require('express');
     	try{
     		var a = parseInt(req.body.a);
     		var b = parseInt(req.body.b);
-    		res.json({data:(a+b)});
+    		res.json({data:req.body.a});
     	}catch(ex){
 
-    		res.json({data:ex});
+    		res.json({data:ex+" in catch"});
     	}
     	
 
