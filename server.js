@@ -1,7 +1,7 @@
 var http = require('http');
 var express = require('express');
 var bodyParser  = require("body-parser");
-
+var jsonParser = bodyParser.json()
  var app = express();
  var server = http.createServer(app);
  var value = 0;
@@ -29,7 +29,7 @@ var bodyParser  = require("body-parser");
       	res.end(JSON.stringify({data:"hello world! getData"}));
    });
 
-    app.post('/add',function(req,res){
+    app.post('/add',jsonParser,function(req,res){
     	try{
     		/*var a = parseInt(req.body.a);
     		var b = parseInt(req.body.b);*/
