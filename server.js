@@ -16,10 +16,10 @@ var express = require('express');
 
    app.get('/',function(req,res){
    		res.writeHead(200, { 'Content-Type': 'application/json' });
-      	res.end(JSON.stringfy({data:"hello world!"}));
+      	res.end(JSON.stringify({data:"hello world!"}));
    });
 
     app.get('/getData',function(req,res){
    		res.writeHead(200, { 'Content-Type': 'application/json' });
-      	res.end(JSON.stringfy({data:"hello world! getData"}));
+      	res.end(JSON.stringify({data:"hello world! getData"}));
    });
