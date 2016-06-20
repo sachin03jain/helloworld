@@ -1,6 +1,6 @@
 var http = require('http');
 var express = require('express');
-var bodyParser      = require("body-parser");
+var bodyParser  = require("body-parser");
 
  var app = express();
  var server = http.createServer(app);
@@ -31,9 +31,10 @@ var bodyParser      = require("body-parser");
 
     app.post('/add',function(req,res){
     	try{
-    		var a = parseInt(req.params.a);
-    		var b = parseInt(req.params.b);
-    		res.json({'data':a+b});
+    		var a = parseInt(req.body.a);
+    		var b = parseInt(req.body.b);
+    		res.writeHead(200, { 'Content-Type': 'application/json' });
+    		res.end({'data':a+b});
     	}catch(ex){
 
     		res.json({data:ex+" in catch"});
