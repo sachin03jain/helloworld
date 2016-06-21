@@ -12,20 +12,26 @@ $(function()
             alert("Please insert some data!");
           }else{
 
-              $.post('https://functions1daafd45.azurewebsites.net/api/deepTest',JSON.parse(data),"application/json").success(function(response) {
-
-                 //alert("response "+ response.val);
-              if(response){
-               /* if(response.status==200){
-                  alert("response"+ response.val);
-                }else{
-                  alert("response"+ response.val);
-                }*/
-              }
+              /*$.post('https://functions1daafd45.azurewebsites.net/api/deepTest',JSON.parse(data),"application/json").success(function(response) {
+              
               $("#errorLblId").text(JSON.stringify(response.val));
               }).error(function(error) {
                 //console.log("error"+JSON.stringify(error));
                  $("#errorLblId").text(JSON.stringify(error));
+              });*/
+              $.ajax({
+                    url: 'https://functions1daafd45.azurewebsites.net/api/deepTest',
+                    dataType: 'json',
+                    type: 'post',
+                    contentType: 'application/json',
+                    data: data,
+                    processData: false,
+                    success: function( data, textStatus, jQxhr ){
+                       $("#errorLblId").text( JSON.stringify( data ) );
+                    },
+                    error: function( jqXhr, textStatus, errorThrown ){
+                         $("#errorLblId").text(JSON.stringify(errorThrown));
+                    }
               });
 
         }
