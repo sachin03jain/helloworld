@@ -12,17 +12,17 @@ $(function()
             alert("Please insert some data!");
           }else{
 
-              $.post('https://functions1daafd45.azurewebsites.net/api/deepTest?code=hn4o9o6flk64p1eemzfz7vzgno9n1h9p',data).success(function(response) {
+              $.post('https://functions1daafd45.azurewebsites.net/api/deepTest',data).success(function(response) {
 
-                 alert("response "+ response);
+                 //alert("response "+ response.val);
               if(response){
-                if(response.status==200){
-                  alert("response"+ response);
+               /* if(response.status==200){
+                  alert("response"+ response.val);
                 }else{
-                  alert("response"+ response);
-                }
+                  alert("response"+ response.val);
+                }*/
               }
-              $("#errorLblId").text(JSON.stringify(response));
+              $("#errorLblId").text(JSON.stringify(response.val));
               }).error(function(error) {
                 //console.log("error"+JSON.stringify(error));
                  $("#errorLblId").text(JSON.stringify(error));
