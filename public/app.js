@@ -24,7 +24,7 @@ $(function()
                     dataType: 'json',
                     type: 'POST',
                     contentType: "application/json; charset=utf-8",
-                    data: data1,
+                    data: JSON.stringify(data1),
                     processData: false,
                     success: function( data, textStatus, jQxhr ){
                        $("#errorLblId").text( textStatus +" -  "+data +" - "+jQxhr );
