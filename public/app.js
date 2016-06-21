@@ -14,9 +14,9 @@ $(function()
 
               if(response){
                 if(response.status==200){
-                  alert("response"+ response.body);
+                  alert("response"+ response.val);
                 }else{
-                  alert("response"+ response.body);
+                  alert("response"+ response.val);
                 }
               }
 
@@ -34,13 +34,13 @@ $(function()
       $("#getBtnId").click( function(){
 
         $.post('https://functions1daafd45.azurewebsites.net/api/fetchDataFromSql2?code=ts760dcv9rp3c6czspdtrsh3jvlds9i').success(function(response) {
-           alert("response "+ response.body);
+           
           if(response){
               if(response.status==200){
-                 alert("response "+ response.body);
+                 alert("response "+ response.val);
 
               }
-              $("#showDataLblId").text(response.body);
+              $("#showDataLblId").text(response.val);
           }
 
          }).error(function() {
