@@ -34,7 +34,7 @@ $(function()
 
       $("#getBtnId").click( function(){
 
-        $.post('https://functions1daafd45.azurewebsites.net/api/fetchDataFromSql2?code=ts760dcv9rp3c6czspdtrsh3jvlds9i').success(function(response) {
+        $.get('https://functions1daafd45.azurewebsites.net/api/fetchDataFromSql2?code=ts760dcv9rp3c6czspdtrsh3jvlds9i').success(function(response) {
            
             alert("response "+ response.val);
           if(response){
