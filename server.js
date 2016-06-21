@@ -31,9 +31,9 @@ var jsonParser = bodyParser.json()
 
     app.post('/add',jsonParser,function(req,res){
     	try{
-    		/*var a = parseInt(req.body.a);
-    		var b = parseInt(req.body.b);*/
-    		res.json({'data':"data  = "+JSON.stringify(req.body) });
+    		var a = parseInt(req.body.a);
+    		var b = parseInt(req.body.b);
+    		res.json({'data':a+b});
     	}catch(ex){
 
     		res.json({data:ex+" in catch"});
