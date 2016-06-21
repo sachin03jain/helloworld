@@ -6,6 +6,8 @@ var jsonParser = bodyParser.json()
  var server = http.createServer(app);
  var value = 0;
 
+ app.use(bodyParser.urlencoded({ extended: true }));
+ app.use(bodyParser.json());
  var port = process.env.PORT || 3000;
  var host = process.env.HOST || '0.0.0.0';
    /* http.createServer(function(req, res) {
@@ -16,8 +18,6 @@ var jsonParser = bodyParser.json()
 
    });
 
-  app.use(bodyParser.urlencoded({ extended: true }));
-  app.use(bodyParser.json());
 
    app.get('/',function(req,res){
    		res.writeHead(200, { 'Content-Type': 'application/json' });
