@@ -13,7 +13,7 @@ $(function()
           }else{
 
               $.post('https://functions1daafd45.azurewebsites.net/api/deepTest',{
-                data:JSON.parse(data);
+                "data":JSON.parse(data);
               },"application/json").success(function(response) {
 
                  //alert("response "+ response.val);
