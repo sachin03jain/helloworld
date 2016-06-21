@@ -5,11 +5,13 @@ var jsonParser = bodyParser.json()
  var app = express();
  var server = http.createServer(app);
  var value = 0;
+ var port = process.env.PORT || 3000;
+ var host = process.env.HOST || '0.0.0.0';
+
 
  app.use(bodyParser.urlencoded({ extended: true }));
  app.use(bodyParser.json());
- var port = process.env.PORT || 3000;
- var host = process.env.HOST || '0.0.0.0';
+ app.use(express.static(__dirname + '/public'));
    /* http.createServer(function(req, res) {
       res.writeHead(200, { 'Content-Type': 'text/plain' });
       res.end('Hello World!\n Server running at '+host+':'+port);
