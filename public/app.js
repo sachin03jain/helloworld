@@ -28,10 +28,10 @@ $(function()
                     processData: false,
                     success: function( data, textStatus, jQxhr ){
                        $("#errorLblId").text( textStatus +" -  "+data +" - "+jQxhr );
-                    },
+                    }/*,
                     error: function( jqXhr, textStatus, errorThrown ){
                          $("#errorLblId").text(" error - "+textStatus +" -- "+errorThrown);
-                    }
+                    }*/
               });
 
         }
