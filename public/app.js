@@ -6,13 +6,13 @@ $(function()
   $(function() {
 
       $("#sendBtnId").click( function(){
-
+        $("#errorLblId").text("");
         var data= $("#sendDataTextId").val();
           if(data==""){
             alert("Please insert some data!");
           }else{
 
-              $.post('https://functions1daafd45.azurewebsites.net/api/deepTest',JSON.parse(data)).success(function(response) {
+              $.post('https://functions1daafd45.azurewebsites.net/api/deepTest',{'sensor':'sensor'}).success(function(response) {
 
                  //alert("response "+ response.val);
               if(response){
