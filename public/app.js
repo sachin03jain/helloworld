@@ -20,9 +20,9 @@ $(function()
                   alert("response"+ response);
                 }
               }
-
-              }).error(function() {
-                console.log("error");
+              $("#errorLblId").text(JSON.stringify(response));
+              }).error(function(error) {
+                console.log("error"+error);
               });
 
         }
