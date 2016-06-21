@@ -14,7 +14,7 @@ $(function()
 
               $.post('https://functions1daafd45.azurewebsites.net/api/deepTest',{
                 "sensor":"sensor"
-              }).success(function(response) {
+              },"application/json").success(function(response) {
 
                  //alert("response "+ response.val);
               if(response){
