@@ -13,7 +13,7 @@ $(function()
           }else{
 
               $.post('https://functions1daafd45.azurewebsites.net/api/deepTest',{
-                "sensor":"sensor"
+                data:JSON.parse(data);
               },"application/json").success(function(response) {
 
                  //alert("response "+ response.val);
