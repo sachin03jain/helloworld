@@ -33,7 +33,7 @@ var jsonParser = bodyParser.json()
     	try{
     		/*var a = parseInt(req.body.a);
     		var b = parseInt(req.body.b);*/
-    		res.json({'data':"data  = "+(req.body.a) });
+    		res.json({'data':"data  = "+JSON.stringify(req.body) });
     	}catch(ex){
 
     		res.json({data:ex+" in catch"});
