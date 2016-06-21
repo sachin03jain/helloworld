@@ -12,12 +12,12 @@ $(function()
 
               $.post('https://functions1daafd45.azurewebsites.net/api/deepTest?code=hn4o9o6flk64p1eemzfz7vzgno9n1h9p',data).success(function(response) {
 
-                 alert("response "+ response.val);
+                 alert("response "+ response);
               if(response){
                 if(response.status==200){
-                  alert("response"+ response.val);
+                  alert("response"+ response);
                 }else{
-                  alert("response"+ response.val);
+                  alert("response"+ response);
                 }
               }
 
@@ -36,13 +36,13 @@ $(function()
 
         $.get('https://functions1daafd45.azurewebsites.net/api/fetchDataFromSql2?code=ts760dcv9rp3c6czspdtrsh3jvlds9i').success(function(response) {
            
-            alert("response "+ response);
+            //alert("response "+ response);
           if(response){
-              if(response.status==200){
-                 alert("response "+ response.val);
+              /*if(response.status==200){
+                 alert("response "+ response);
 
-              }
-              $("#showDataLblId").text(response.val);
+              }*/
+              $("#showDataLblId").text(JSON.stringify(response));
           }
 
          }).error(function() {
