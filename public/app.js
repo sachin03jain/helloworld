@@ -12,7 +12,7 @@ $(function()
             alert("Please insert some data!");
           }else{
 
-              $.post('https://functions1daafd45.azurewebsites.net/api/deepTest',data).success(function(response) {
+              $.post('https://functions1daafd45.azurewebsites.net/api/deepTest',JSON.parse(data)).success(function(response) {
 
                  //alert("response "+ response.val);
               if(response){
