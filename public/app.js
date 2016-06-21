@@ -22,8 +22,8 @@ $(function()
               $.ajax({
                     url: 'https://functions1daafd45.azurewebsites.net/api/deepTest',
                     dataType: 'json',
-                    type: 'post',
-                    contentType: 'application/json',
+                    type: 'POST',
+                    contentType: "application/json; charset=utf-8",
                     data: data1,
                     processData: false,
                     success: function( data, textStatus, jQxhr ){
