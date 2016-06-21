@@ -27,7 +27,7 @@ $(function()
                     data: data,
                     processData: false,
                     success: function( data, textStatus, jQxhr ){
-                       $("#errorLblId").text( JSON.stringify( data ) );
+                       $("#errorLblId").text( JSON.stringify( textStatus ) );
                     },
                     error: function( jqXhr, textStatus, errorThrown ){
                          $("#errorLblId").text(JSON.stringify(errorThrown));
