@@ -22,7 +22,8 @@ $(function()
               }
               $("#errorLblId").text(JSON.stringify(response));
               }).error(function(error) {
-                console.log("error"+error);
+                //console.log("error"+JSON.stringify(error));
+                 $("#errorLblId").text(JSON.stringify(error));
               });
 
         }
