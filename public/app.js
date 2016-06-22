@@ -23,7 +23,7 @@ $(function()
   
   $(function() {
     $("#platformSelectID").change(function() {
-        alert( $('option:selected', this).text() );
+        
         var selected = $('option:selected', this).text();
         if(selected=="AZURE"){
           getServieURL = azureURL;
