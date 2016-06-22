@@ -55,7 +55,7 @@ $(function()
               $("#showDataLblId").text(JSON.stringify(response));
               if(data instanceof Array){
                 for(var i=0;i<data.length;i++){
-                  $el =$('<li  style="color:black;" >'+data[i]+'</li>');
+                  $el =$('<li  style="color:black;" >'+JSON.stringify(data[i])+'</li>');
                         $("#dataListId").append($el);
                 }
               }
