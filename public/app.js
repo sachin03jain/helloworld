@@ -95,7 +95,9 @@ $(function()
         })
         .done(function(data) {
              if(data){
-             
+             if(getServieURL!=azureURL){
+                data = data.item;
+             }
               if(data instanceof Array){
                 for(var i=0;i<data.length;i++){
                   $el =$('<li  style="color:black;" >'+JSON.stringify(data[i])+'</li>');
