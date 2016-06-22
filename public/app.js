@@ -21,7 +21,7 @@ $(function()
                 //console.log("error"+JSON.stringify(error));
                  $("#errorLblId").text(JSON.stringify(error));
               });*/
-              $.ajax({
+             /* $.ajax({
                     url: 'https://functions1daafd45.azurewebsites.net/api/deepTest',
                     dataType: 'json',
                     type: 'POST',
@@ -34,7 +34,28 @@ $(function()
                     error: function( jqXhr, textStatus, errorThrown ){
                          $("#errorLblId").text(JSON.stringify(jqXhr));
                     }
-              });
+              });*/
+              var params = {
+            // Request parameters
+              };
+              $.ajax({
+                url: "https://sjapimanagement.azure-api.net/caliper/event/?" + $.param(params),
+                beforeSend: function(xhrObj){
+                // Request headers
+                xhrObj.setRequestHeader("Ocp-Apim-Subscription-Key","{242c0bbeeee44f72adb01e955427b703}");
+                  },
+                  type: "POST",
+            // Request body
+                  data: JSON.stringify(JSON.parse(data1)),
+              })
+        .done(function(data) {
+            //alert("success");
+             $("#errorLblId").text( JSON.stringify(data) );
+        })
+        .fail(function() {
+            alert("error");
+             $("#errorLblId").text("error");
+        });
 
         }
 
@@ -70,7 +91,7 @@ $(function()
             url: "https://sjapimanagement.azure-api.net/caliper/get/caliper/get",
             beforeSend: function(xhrObj){
                 // Request headers
-                xhrObj.setRequestHeader("Ocp-Apim-Subscription-Key","242c0bbeeee44f72adb01e955427b703");
+                xhrObj.setRequestHeader("Ocp-Apim-Subscription-Key","{242c0bbeeee44f72adb01e955427b703}");
             },
             type: "GET",
             // Request body
