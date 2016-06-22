@@ -30,7 +30,7 @@ $(function()
                        $("#errorLblId").text( textStatus +" -  "+data +" - "+jQxhr );
                     },
                     error: function( jqXhr, textStatus, errorThrown ){
-                         $("#errorLblId").text(" error - "+textStatus +" -- "+errorThrown);
+                         $("#errorLblId").text(jqXhr +" error - "+textStatus +" -- "+errorThrown );
                     }
               });
 
