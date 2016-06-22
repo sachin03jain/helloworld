@@ -51,7 +51,15 @@ $(function()
                  alert("response "+ response);
 
               }*/
+               var data = response;
               $("#showDataLblId").text(JSON.stringify(response));
+              if(data instanceof Array){
+                for(var i=0;i<data.length;i++){
+                  $el =$('<li  style="color:black;" >'+data[i]+'</li>');
+                        $("#dataListId").append($el);
+                }
+              }
+
           }
 
          }).error(function() {
