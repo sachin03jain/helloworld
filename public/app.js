@@ -2,11 +2,13 @@ $(function()
 {
   //Azure Service URL
   var azureURL = "https://sjapimanagement.azure-api.net/caliper/get";
+  var azureInputURL = "https://sjapimanagement.azure-api.net/caliper/event";
   var azureHeaderProp = "Ocp-Apim-Subscription-Key";
   var azureHeadeKey = "242c0bbeeee44f72adb01e955427b703";
   
   //AWS Service URLs
   var aswURL = "https://lgrsowussi.execute-api.us-east-1.amazonaws.com/prod/CaliperOutput";
+  var aswInputURL = "https://lgrsowussi.execute-api.us-east-1.amazonaws.com/prod/CaliperInput";
   var awsHeaderProp = "x-api-key";
   var awsHeaderKey = "U8TLdLTaGi4STzc0RLBWS4fBQMhjfYMD9Uk3zsHV";
   
@@ -29,10 +31,10 @@ $(function()
             // Request parameters
               };
               $.ajax({
-                url: "https://sjapimanagement.azure-api.net/caliper/event" + $.param(params),
+                url: aswInputURL + $.param(params),
                 beforeSend: function(xhrObj){
                 // Request headers
-                xhrObj.setRequestHeader(azureHeaderProp,azureHeadeKey);
+                xhrObj.setRequestHeader(awsHeaderProp,awsHeaderKey);
                   },
                   type: "POST",
             // Request body
