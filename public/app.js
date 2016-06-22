@@ -46,6 +46,7 @@ $(function()
                   },
                   type: "POST",
             // Request body
+                  contentType: "application/json; charset=utf-8",
                   data: JSON.parse(data1),
               })
         .done(function(data) {
