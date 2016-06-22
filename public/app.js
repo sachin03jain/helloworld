@@ -44,8 +44,8 @@ $(function()
   $(function() {
 
       $("#getBtnId").click( function(){
-
-        $.get('https://functions1daafd45.azurewebsites.net/api/fetchDataFromSql2?code=ts760dcv9rp3c6czspdtrsh3jvlds9i').success(function(response) {
+        //https://functions1daafd45.azurewebsites.net/api/fetchDataFromSql2?code=ts760dcv9rp3c6czspdtrsh3jvlds9i
+        $.get('https://sjapimanagement.azure-api.net/caliper/get/caliper/get').success(function(response) {
            
             //alert("response "+ response);
           if(response){
