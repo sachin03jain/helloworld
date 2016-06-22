@@ -95,10 +95,10 @@ $(function()
         var awsHeaderProp = "x-api-key";
         var awsHeaderKey = "U8TLdLTaGi4STzc0RLBWS4fBQMhjfYMD9Uk3zsHV";
         $.ajax({
-            url: aswURL,
+            url: "https://lgrsowussi.execute-api.us-east-1.amazonaws.com/prod/CaliperOutput",
             beforeSend: function(xhrObj){
                 // Request headers
-                xhrObj.setRequestHeader(awsHeaderProp,awsHeaderKey);
+                xhrObj.setRequestHeader("x-api-key","U8TLdLTaGi4STzc0RLBWS4fBQMhjfYMD9Uk3zsHV");
             },
             type: "GET",
             // Request body
