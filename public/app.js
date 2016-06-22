@@ -74,7 +74,7 @@ $(function()
             },
             type: "GET",
             // Request body
-            data: "{}",
+            data: "",
         })
         .done(function(data) {
             alert("success");
