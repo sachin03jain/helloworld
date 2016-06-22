@@ -46,7 +46,7 @@ $(function()
                   },
                   type: "POST",
             // Request body
-                  data: JSON.stringify(JSON.parse(data1)),
+                  data: JSON.parse(data1),
               })
         .done(function(data) {
             //alert("success");
