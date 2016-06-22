@@ -45,14 +45,11 @@ $(function()
 
       $("#getBtnId").click( function(){
         //https://functions1daafd45.azurewebsites.net/api/fetchDataFromSql2?code=ts760dcv9rp3c6czspdtrsh3jvlds9i
-        $.get('https://sjapimanagement.azure-api.net/caliper/get/caliper/get').success(function(response) {
+       /* $.get('https://sjapimanagement.azure-api.net/caliper/get/caliper/get').success(function(response) {
            
             //alert("response "+ response);
           if(response){
-              /*if(response.status==200){
-                 alert("response "+ response);
-
-              }*/
+             
                var data = response;
               //$("#showDataLblId").text(JSON.stringify(response));
               if(data instanceof Array){
@@ -67,7 +64,27 @@ $(function()
          }).error(function() {
              console.log("error");
          });
-      });
+      });*/
+       var params = {
+            // Request parameters
+        };
+      
+        $.ajax({
+            url: "https://sjapimanagement.azure-api.net/caliper/get/caliper/get?" + $.param(params),
+            beforeSend: function(xhrObj){
+                // Request headers
+                xhrObj.setRequestHeader("Ocp-Apim-Subscription-Key","242c0bbeeee44f72adb0");
+            },
+            type: "GET",
+            // Request body
+            data: "",
+        })
+        .done(function(data) {
+            alert("success");
+        })
+        .fail(function() {
+            alert("error");
+        });
   });
 
 
