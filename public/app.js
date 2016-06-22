@@ -15,7 +15,32 @@ $(function()
   var dataStr = "{  \"sensor\": \"https://example.edu/sensor/TestSensor\",  \"sendTime\": \"2015-09-15T11:05:01.000Z\",  \"data\": [    {      \"@context\": \"http://purl.imsglobal.org/ctx/caliper/v1/Context\",      \"@type\": \"http://purl.imsglobal.org/caliper/v1/NavigationEvent\",      \"actor\": {        \"@context\": \"http://purl.imsglobal.org/ctx/caliper/v1/Context\",        \"@id\": \"https://example.edu/user/TestUser\",        \"@type\": \"http://purl.imsglobal.org/caliper/v1/lis/Person\",        \"name\": null,        \"description\": null,        \"extensions\": {},        \"dateCreated\": \"2015-08-01T06:00:00.000Z\",        \"dateModified\": \"2015-09-02T11:30:00.000Z\"      },      \"action\": \"http://purl.imsglobal.org/vocab/caliper/v1/action#NavigatedTo\",      \"object\": {        \"@context\": \"http://purl.imsglobal.org/ctx/caliper/v1/Context\",        \"@id\": \"https://example.com/viewer/book/34843#epubcfi(/4/3)\",        \"@type\": \"http://www.idpf.org/epub/vocab/structure/#volume\",        \"name\": \"The Glorious Cause: The American Revolution, 1763-1789 (Oxford History of the United States)\",        \"description\": null,        \"objectType\": [],        \"alignedLearningObjective\": [],        \"keywords\": [],        \"isPartOf\": null,        \"extensions\": {},        \"dateCreated\": \"2015-08-01T06:00:00.000Z\",        \"dateModified\": \"2015-09-02T11:30:00.000Z\",        \"datePublished\": null,        \"version\": \"2nd ed.\"      },      \"eventTime\": \"2015-09-15T10:15:00.000Z\"    }  ]}";
   var obj = JSON.parse(dataStr);
   var pretty = JSON.stringify(obj, undefined, 4);
+
+  var getServieURL = azureURL;
+  var postServieURL = azureInputURL;
+  var headerProp = azureHeaderProp;
+  var headerKey = azureHeadeKey;
   
+  $(function() {
+    $("#platformSelectID").change(function() {
+        alert( $('option:selected', this).text() );
+        var selected = $('option:selected', this).text();
+        if(selected=="AZURE"){
+          getServieURL = azureURL;
+          postServieURL = azureInputURL;
+          headerProp = azureHeaderProp;
+          headerKey = azureHeadeKey;
+        }else{
+          getServieURL = aswURL;
+          postServieURL = aswInputURL;
+          headerProp = awsHeaderProp;
+          headerKey = awsHeaderKey;
+        }
+        $('#postServiceLblID').text("POST: "+postServieURL);
+        $('#getServiceLblID').text("GET: "+getServieURL);
+    });
+  });
+
   $("#sendDataTextId").text(pretty);
   
   $(function() {
@@ -31,10 +56,10 @@ $(function()
             // Request parameters
               };
               $.ajax({
-                url: aswInputURL + $.param(params),
+                url: postServieURL + $.param(params),
                 beforeSend: function(xhrObj){
                 // Request headers
-                xhrObj.setRequestHeader(awsHeaderProp,awsHeaderKey);
+                xhrObj.setRequestHeader(headerProp,headerKey);
                   },
                   type: "POST",
             // Request body
@@ -59,10 +84,10 @@ $(function()
 
       $("#getBtnId").click( function(){
         $.ajax({
-            url: aswURL,
+            url: getServieURL,
             beforeSend: function(xhrObj){
                 // Request headers
-                xhrObj.setRequestHeader(awsHeaderProp,awsHeaderKey);
+                xhrObj.setRequestHeader(headerProp,headerKey);
             },
             type: "GET",
             // Request body
