@@ -87,12 +87,18 @@ $(function()
              console.log("error");
          });
       });*/
-      
+        
+        var azureURL = "https://sjapimanagement.azure-api.net/caliper/get";
+        var azureHeaderProp = "Ocp-Apim-Subscription-Key";
+        var azureHeadeKey = "242c0bbeeee44f72adb01e955427b703";
+        var aswURL = "https://lgrsowussi.execute-api.us-east-1.amazonaws.com/prod/CaliperOutput";
+        var awsHeaderProp = "x-api-key";
+        var awsHeaderKey = "U8TLdLTaGi4STzc0RLBWS4fBQMhjfYMD9Uk3zsHV";
         $.ajax({
-            url: "https://sjapimanagement.azure-api.net/caliper/get",
+            url: aswURL,
             beforeSend: function(xhrObj){
                 // Request headers
-                xhrObj.setRequestHeader("Ocp-Apim-Subscription-Key","242c0bbeeee44f72adb01e955427b703");
+                xhrObj.setRequestHeader(awsHeaderProp,awsHeaderKey);
             },
             type: "GET",
             // Request body
