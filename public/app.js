@@ -70,7 +70,7 @@ $(function()
             url: "https://sjapimanagement.azure-api.net/caliper/get/caliper/get",
             beforeSend: function(xhrObj){
                 // Request headers
-                xhrObj.setRequestHeader("Ocp-Apim-Subscription-Key","{242c0bbeeee44f72adb01e955427b703}");
+                xhrObj.setRequestHeader("Ocp-Apim-Subscription-Key","242c0bbeeee44f72adb01e955427b703");
             },
             type: "GET",
             // Request body
