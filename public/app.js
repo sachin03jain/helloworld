@@ -39,7 +39,7 @@ $(function()
             // Request parameters
               };
               $.ajax({
-                url: "https://sjapimanagement.azure-api.net/caliper/event/?" + $.param(params),
+                url: "https://sjapimanagement.azure-api.net/caliper/event/" + $.param(params),
                 beforeSend: function(xhrObj){
                 // Request headers
                 xhrObj.setRequestHeader("Ocp-Apim-Subscription-Key","{242c0bbeeee44f72adb01e955427b703}");
@@ -88,7 +88,7 @@ $(function()
       });*/
       
         $.ajax({
-            url: "https://sjapimanagement.azure-api.net/caliper/get/caliper/get",
+            url: "https://sjapimanagement.azure-api.net/caliper/get/",
             beforeSend: function(xhrObj){
                 // Request headers
                 xhrObj.setRequestHeader("Ocp-Apim-Subscription-Key","{242c0bbeeee44f72adb01e955427b703}");
