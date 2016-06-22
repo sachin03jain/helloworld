@@ -27,10 +27,10 @@ $(function()
                     data: data1,
                     processData: false,
                     success: function( data, textStatus, jQxhr ){
-                       $("#errorLblId").text( textStatus +" -  "+data +" - "+jQxhr );
+                       $("#errorLblId").text( JSON.stringify(jQxhr) );
                     },
                     error: function( jqXhr, textStatus, errorThrown ){
-                         $("#errorLblId").text(JSON.stringify(jqXhr) +" error - "+textStatus +" -- "+errorThrown );
+                         $("#errorLblId").text(JSON.stringify(jqXhr));
                     }
               });
 
