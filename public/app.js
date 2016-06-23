@@ -43,6 +43,8 @@ $(function()
         }
         $('#postServiceLblID').text("POST: "+postServieURL);
         $('#getServiceLblID').text("GET: "+getServieURL);
+        $('#dataTableContainerId').find('table').empty();
+        $('#dataTableContainer2Id').find('table').empty();
     });
   });
 
@@ -89,7 +91,7 @@ $(function()
 
       $("#getBtnId").click( function(){
         $("#loaderId").show();
-        $('#dataTableContainerId').clear();
+        $('#dataTableContainerId').find('table').empty();
         $.ajax({
             url: getServieURL,
             beforeSend: function(xhrObj){
@@ -147,7 +149,7 @@ $(function()
 
       $("#getSqlBtnId").click( function(){
         $("#loader2Id").show();
-        $('#dataTableContainer2Id').clear();
+        $('#dataTableContainer2Id').find('table').empty();
         $.ajax({
             url: azureSqlOutputURL,
             beforeSend: function(xhrObj){
