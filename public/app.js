@@ -89,6 +89,7 @@ $(function()
 
       $("#getBtnId").click( function(){
         $("#loaderId").show();
+        $('#dataTableContainerId').clear();
         $.ajax({
             url: getServieURL,
             beforeSend: function(xhrObj){
@@ -146,6 +147,7 @@ $(function()
 
       $("#getSqlBtnId").click( function(){
         $("#loader2Id").show();
+        $('#dataTableContainer2Id').clear();
         $.ajax({
             url: azureSqlOutputURL,
             beforeSend: function(xhrObj){
