@@ -130,7 +130,7 @@ $(function()
             url: azureSqlOutputURL,
             beforeSend: function(xhrObj){
                 // Request headers
-                xhrObj.setRequestHeader(headerProp,headerKey);
+                xhrObj.setRequestHeader(azureHeaderProp,azureHeadeKey);
             },
             type: "GET",
             // Request body
