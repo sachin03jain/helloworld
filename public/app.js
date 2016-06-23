@@ -1,8 +1,10 @@
 $(function()
 {
   //Azure Service URL
-  var azureURL = "https://sjapimanagement.azure-api.net/caliper/getdocdb";//"https://sjapimanagement.azure-api.net/caliper/get";
+  var azureSqlOutputURL = "https://sjapimanagement.azure-api.net/caliper/get";
+  var azureURL = "https://sjapimanagement.azure-api.net/caliper/getdocdb";
   var azureInputURL = "https://sjapimanagement.azure-api.net/caliper/event";
+
   var azureHeaderProp = "Ocp-Apim-Subscription-Key";
   var azureHeadeKey = "242c0bbeeee44f72adb01e955427b703";
   
@@ -100,7 +102,41 @@ $(function()
              }
               if(data instanceof Array){
                 for(var i=0;i<data.length;i++){
-                  $el =$('<li  style="color:black;" >'+JSON.stringify(data[i])+'</li>');
+                  $el =$('<li  style="color:black;" >'+JSON.stringify(data[i],undefined,4)+'</li>');
+                        $("#ddbDataListId").append($el);
+                }
+              }
+
+          }
+        })
+        .fail(function() {
+            alert("error");
+        });
+    });
+  });
+
+
+  $(function() {
+
+      $("#getSqlBtnId").click( function(){
+        $.ajax({
+            url: azureSqlOutputURL,
+            beforeSend: function(xhrObj){
+                // Request headers
+                xhrObj.setRequestHeader(headerProp,headerKey);
+            },
+            type: "GET",
+            // Request body
+            data: "",
+        })
+        .done(function(data) {
+             if(data){
+             if(getServieURL!=azureURL){
+                data = data.Items;
+             }
+              if(data instanceof Array){
+                for(var i=0;i<data.length;i++){
+                  $el =$('<li  style="color:black;" >'+JSON.stringify(data[i],undefined,4)+'</li>');
                         $("#dataListId").append($el);
                 }
               }
