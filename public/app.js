@@ -1,7 +1,7 @@
 $(function()
 {
   //Azure Service URL
-  var azureURL = "https://sjapimanagement.azure-api.net/caliper/docdboutput/caliper/getdocudb";//"https://sjapimanagement.azure-api.net/caliper/get";
+  var azureURL = "https://sjapimanagement.azure-api.net/caliper/getdocdb";//"https://sjapimanagement.azure-api.net/caliper/get";
   var azureInputURL = "https://sjapimanagement.azure-api.net/caliper/event";
   var azureHeaderProp = "Ocp-Apim-Subscription-Key";
   var azureHeadeKey = "242c0bbeeee44f72adb01e955427b703";
