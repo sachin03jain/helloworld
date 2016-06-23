@@ -4,8 +4,10 @@
 <head lang="en">
   <meta charset="utf-8">
   <title>IMS Caliper Analytics&trade; Sample Application</title>
+  <link rel="stylesheet" href="style.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
   <script src="app.js"></script>
+
 
 </head>
 
@@ -20,6 +22,7 @@
       <br/>
       <br/>
       <label for="data" id="postServiceLblID" style="color:white;" >Post : https://sjapimanagement.azure-api.net/caliper/event</label>
+       <label for="data" id="getServiceLblID" style="color:white;margin-left:50px;" >Get : https://sjapimanagement.azure-api.net/caliper/getdocdb</label>
       <br/>
       <br/>
     </div>
@@ -31,29 +34,27 @@
   </div>
   <br/>
   <br/>
-  <div style="background-color:#205081;padding-left:20px;">
-      <br/>
-      <label for="data" id="getServiceLblID" style="color:white;" >Get : https://sjapimanagement.azure-api.net/caliper/getdocdb</label>
-      <br/>
-      <br/>
+ 
+  <div >
+    <br/>
+    <label style="background-color:#205081;padding:5px;color:white;">Data From documentDB/DynamoDB</label><button type="button" id="getBtnId">Get Data</button> <img src="ajax-loader-small.gif" id="loaderId"  />
+    <br/>
+    <br/>
+    
+    
+    <!-- <ul id="ddbDataListId" style="overflow: auto; padding:30px;width:600px; height:200px;"></ul> -->
+    <div id="dataTableContainerId" style="overflow: auto;padding:5px; height:200px;"></div>
   </div>
-  <div style="float:left;">
+  <div >
     <br/>
-    <button type="button" id="getBtnId">Get Data</button> <img src="ajax-loader-small.gif" id="loaderId"  />
+    <label style="background-color:#205081;padding:5px;color:white;">Data From SQL</label><button type="button" id="getSqlBtnId">Get Data From SQL </button> <img src="ajax-loader-small.gif" id="loader2Id"  />
     <br/>
     <br/>
-    <label style="background-color:#205081;padding:5px;color:white;">Data From documentDB/DynamoDB</label>
-    <br/>
-    <ul id="ddbDataListId" style="overflow: auto; padding:30px;width:600px; height:200px;"></ul>
+    
+    
+    <!-- <ul id="dataListId" style="overflow: auto; padding:30px; width:600px;height:200px;"></ul> -->
+    <div id="dataTableContainer2Id" style="overflow: auto;padding:5px; height:200px;"></div>
   </div>
-  <div style="float:right;">
-    <br/>
-    <button type="button" id="getSqlBtnId">Get Data From SQL </button> <img src="ajax-loader-small.gif" id="loader2Id"  />
-    <br/>
-    <br/>
-    <label style="background-color:#205081;padding:5px;color:white;">Data From SQL</label>
-    <br/>
-    <ul id="dataListId" style="overflow: auto; padding:30px; width:600px;height:200px;"></ul>
-  </div>
+
 </body>
 </html>

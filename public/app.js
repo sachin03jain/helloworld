@@ -104,15 +104,34 @@ $(function()
              if(getServieURL!=azureURL){
                 data = data.Items;
              }
+              var container = $('#dataTableContainerId'),table = $('<table>');
+              var th = $('<th>Sensor</th><th>Send Time</th><th>Data Type</th><th>Action</th><th>Actor Id</th><th>Actor Name</th><th>Object Id</th><th>Object Name</th><th>Event Time</th>');
+              table.append(th);
+
+              var type = "@type";
+
               if(data instanceof Array){
                 for(var i=0;i<data.length;i++){
-                  $el =$('<li  style="color:black;" >'+JSON.stringify(data[i],undefined,4)+'</li>');
-                        $("#ddbDataListId").append($el);
+                  //$el =$('<li  style="color:black;padding:5px;" >'+JSON.stringify(data[i],undefined,4)+'</li>');
+                        //$("#ddbDataListId").append($el);
+                         var tr = $('<tr>');
+                          var obj = data[i];
+                          tr.append('<td>' + obj.sensor + '</td>');
+                          tr.append('<td>' + obj.sendTime + '</td>');
+                          tr.append('<td>' + obj.data[0][type] + '</td>');
+                          tr.append('<td>' + obj.data[0].action + '</td>');
+                          tr.append('<td>' + obj.data[0].actor["@id"] + '</td>');
+                          tr.append('<td>' + obj.data[0].actor["name"] + '</td>');
+                          tr.append('<td>' + obj.data[0].object["@id"] + '</td>');
+                          tr.append('<td>' + obj.data[0].object["name"] + '</td>');
+                          tr.append('<td>' + obj.data[0].eventTime + '</td>');
+                          table.append(tr);
                 }
               }
 
           }
            $("#loaderId").hide();
+           container.append(table);
         })
         .fail(function() {
             alert("error");
@@ -141,15 +160,31 @@ $(function()
              if(getServieURL!=azureURL){
                 data = data.Items;
              }
+              var container = $('#dataTableContainer2Id'),table = $('<table>');
+              var th = $('<th>Sensor</th><th>Send Time</th><th>Action</th><th>Actor Id</th><th>Actor Name</th><th>Object Id</th><th>Object Name</th><th>Event Time</th>');
+              table.append(th);
+
               if(data instanceof Array){
                 for(var i=0;i<data.length;i++){
-                  $el =$('<li  style="color:black;" >'+JSON.stringify(data[i],undefined,4)+'</li>');
-                        $("#dataListId").append($el);
+                  // $el =$('<li  style="color:black;" ><textarea rows="10" cols="60">'+JSON.stringify(data[i],undefined,4)+'</textarea></li>');
+                  //       $("#dataListId").append($el);
+                   var tr = $('<tr>');
+                          var obj = data[i];
+                          tr.append('<td>' + obj.sensor + '</td>');
+                          tr.append('<td>' + obj.sendTime + '</td>');
+                          tr.append('<td>' + obj.action + '</td>');
+                          tr.append('<td>' + obj.actorId + '</td>');
+                          tr.append('<td>' + obj.actorName + '</td>');
+                          tr.append('<td>' + obj.objectId + '</td>');
+                          tr.append('<td>' + obj.objectName + '</td>');
+                          tr.append('<td>' + obj.eventTime + '</td>');
+                          table.append(tr);
                 }
               }
 
           }
           $("#loader2Id").hide();
+           container.append(table);
         })
         .fail(function() {
             alert("error");
