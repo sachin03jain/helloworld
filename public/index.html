@@ -10,45 +10,50 @@
 </head>
 
 <body >
-    <div>
-  <select id="platformSelectID">
-      <option value="azure">AZURE</option>
-      <option value="aws">AWS</option>
-  </select>
-       <br/>
-       <br/>
-      <label for="data" id="postServiceLblID" style="color:orange" >Post : https://sjapimanagement.azure-api.net/caliper/event</label>
+  <div>
+    <div style="background-color:#205081;padding-left:20px;">
       <br/>
-      <label for="data" id="getServiceLblID" style="color:green" >Get : https://sjapimanagement.azure-api.net/caliper/getdocdb</label>
+      <select id="platformSelectID">
+        <option value="azure">AZURE</option>
+        <option value="aws">AWS</option>
+      </select>
       <br/>
       <br/>
-      <textarea rows="15" cols="120" id="sendDataTextId"  spellcheck="false" autocapitalize="off" autocorrect="off" > </textarea> 
-       <button type="button" id="sendBtnId">Send Data</button> 
-        <br/>
-        <br/>
-       <label for="data" id="errorLblId" style="color:green;"></label>
+      <label for="data" id="postServiceLblID" style="color:white;" >Post : https://sjapimanagement.azure-api.net/caliper/event</label>
+      <br/>
+      <br/>
     </div>
+    <textarea rows="15" cols="120" id="sendDataTextId"  spellcheck="false" autocapitalize="off" autocorrect="off" > </textarea> 
+    <button type="button" id="sendBtnId">Send Data</button> 
     <br/>
     <br/>
-    <div style="float:left;">
-      <button type="button" id="getBtnId">Get Data</button> 
-       <br/>
-        <br/>
-      <label>Data From documentDB/DynamoDB</label>
-       <br/>
-      <ul id="ddbDataListId" style="overflow: auto; padding:30px;width:600px; height:200px;"></ul>
-    </div>
-    <div style="float:right;">
-      <button type="button" id="getSqlBtnId">Get Data From SQL </button> 
+    <label for="data" id="errorLblId" style="color:green;"></label>
+  </div>
+  <br/>
+  <br/>
+  <div style="background-color:#205081;padding-left:20px;">
+      <br/>
+      <label for="data" id="getServiceLblID" style="color:white;" >Get : https://sjapimanagement.azure-api.net/caliper/getdocdb</label>
       <br/>
       <br/>
-      <label>Data From SQL</label>
-       <br/>
-      <ul id="dataListId" style="overflow: auto; padding:30px; width:600px;height:200px;"></ul>
-    </div>
-     
-    
-
+  </div>
+  <div style="float:left;">
+    <br/>
+    <button type="button" id="getBtnId">Get Data</button> <img src="ajax-loader-small.gif" id="loaderId"  />
+    <br/>
+    <br/>
+    <label style="background-color:#205081;padding:5px;color:white;">Data From documentDB/DynamoDB</label>
+    <br/>
+    <ul id="ddbDataListId" style="overflow: auto; padding:30px;width:600px; height:200px;"></ul>
+  </div>
+  <div style="float:right;">
+    <br/>
+    <button type="button" id="getSqlBtnId">Get Data From SQL </button> <img src="ajax-loader-small.gif" id="loader2Id"  />
+    <br/>
+    <br/>
+    <label style="background-color:#205081;padding:5px;color:white;">Data From SQL</label>
+    <br/>
+    <ul id="dataListId" style="overflow: auto; padding:30px; width:600px;height:200px;"></ul>
+  </div>
 </body>
-
 </html>

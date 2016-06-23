@@ -22,6 +22,9 @@ $(function()
   var postServieURL = azureInputURL;
   var headerProp = azureHeaderProp;
   var headerKey = azureHeadeKey;
+
+  $("#loaderId").hide();
+  $("#loader2Id").hide();
   
   $(function() {
     $("#platformSelectID").change(function() {
@@ -85,6 +88,7 @@ $(function()
   $(function() {
 
       $("#getBtnId").click( function(){
+        $("#loaderId").show();
         $.ajax({
             url: getServieURL,
             beforeSend: function(xhrObj){
@@ -108,9 +112,11 @@ $(function()
               }
 
           }
+           $("#loaderId").hide();
         })
         .fail(function() {
             alert("error");
+            $("#loaderId").hide();
         });
     });
   });
@@ -119,6 +125,7 @@ $(function()
   $(function() {
 
       $("#getSqlBtnId").click( function(){
+        $("#loader2Id").show();
         $.ajax({
             url: azureSqlOutputURL,
             beforeSend: function(xhrObj){
@@ -142,9 +149,11 @@ $(function()
               }
 
           }
+          $("#loader2Id").hide();
         })
         .fail(function() {
             alert("error");
+            $("#loader2Id").hide();
         });
     });
   });
