@@ -5,6 +5,8 @@
   <meta charset="utf-8">
   <title>IMS Caliper Analytics&trade; Sample Application</title>
   <link rel="stylesheet" href="./css/style.css">
+  <link rel="stylesheet" type="text/css" href="./css/bootstrap.css">
+  <script src="./js/bootstrap.js"></script>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
   <script src="./js/app.js"></script>
 
@@ -27,7 +29,7 @@
       <br/>
     </div>
     <textarea rows="15" cols="120" id="sendDataTextId"  spellcheck="false" autocapitalize="off" autocorrect="off" > </textarea> 
-    <button type="button" id="sendBtnId">Send Data</button> 
+    <button type="button" class="btn btn-sm btn-default" id="sendBtnId">Send Data</button> 
     <br/>
     <br/>
     <label for="data" id="errorLblId" style="color:green;"></label>
@@ -37,7 +39,9 @@
  
   <div >
     <br/>
-    <label style="background-color:#205081;padding:5px;color:white;">Data From documentDB/DynamoDB</label><button type="button" id="getBtnId">Get Data</button> <img src="./images/ajax-loader-small.gif" id="loaderId"  />
+    <label style="background-color:#205081;padding:5px;color:white;">Data From documentDB/DynamoDB</label>
+    <button type="button" class="btn btn-sm btn-default" id="getBtnId">Get Data</button> 
+    <img src="./images/ajax-loader-small.gif" id="loaderId"  />
     <br/>
     <br/>
     
@@ -47,7 +51,9 @@
   </div>
   <div >
     <br/>
-    <label style="background-color:#205081;padding:5px;color:white;">Data From SQL</label><button type="button" id="getSqlBtnId">Get Data From SQL </button> <img src="./images/ajax-loader-small.gif" id="loader2Id"  />
+    <label style="background-color:#205081;padding:5px;color:white;">Data From SQL</label>
+    <button type="button" class="btn btn-sm btn-default" id="getSqlBtnId">Get Data From SQL </button> 
+    <img src="./images/ajax-loader-small.gif" id="loader2Id"  />
     <br/>
     <br/>
     
