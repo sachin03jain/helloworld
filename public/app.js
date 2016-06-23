@@ -105,7 +105,7 @@ $(function()
                 data = data.Items;
              }
               var container = $('#dataTableContainerId'),table = $('<table>');
-              var th = $('<th>Sensor</th><th>Send Time</th><th>Data Type</th><th>Action</th><th>Actor Id</th><th>Actor Name</th><th>Object Id</th><th>Object Name</th><th>Event Time</th>');
+              var th = $('<th>No.</th><th>Sensor</th><th>Send Time</th><th>Data Type</th><th>Action</th><th>Actor Id</th><th>Actor Name</th><th>Object Id</th><th>Object Name</th><th>Event Time</th>');
               table.append(th);
 
               var type = "@type";
@@ -116,6 +116,7 @@ $(function()
                         //$("#ddbDataListId").append($el);
                          var tr = $('<tr>');
                           var obj = data[i];
+                          tr.append('<td>' + (i+1) + '</td>');
                           tr.append('<td>' + obj.sensor + '</td>');
                           tr.append('<td>' + obj.sendTime + '</td>');
                           tr.append('<td>' + obj.data[0][type] + '</td>');
@@ -161,7 +162,7 @@ $(function()
                 data = data.Items;
              }
               var container = $('#dataTableContainer2Id'),table = $('<table>');
-              var th = $('<th>Sensor</th><th>Send Time</th><th>Action</th><th>Actor Id</th><th>Actor Name</th><th>Object Id</th><th>Object Name</th><th>Event Time</th>');
+              var th = $('<th>No.</th><th>Sensor</th><th>Send Time</th><th>Action</th><th>Actor Id</th><th>Actor Name</th><th>Object Id</th><th>Object Name</th><th>Event Time</th>');
               table.append(th);
 
               if(data instanceof Array){
@@ -170,6 +171,7 @@ $(function()
                   //       $("#dataListId").append($el);
                    var tr = $('<tr>');
                           var obj = data[i];
+                          tr.append('<td>' + (i+1) + '</td>');
                           tr.append('<td>' + obj.sensor + '</td>');
                           tr.append('<td>' + obj.sendTime + '</td>');
                           tr.append('<td>' + obj.action + '</td>');
